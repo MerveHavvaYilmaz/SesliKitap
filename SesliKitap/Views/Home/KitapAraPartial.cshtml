@@ -1,0 +1,13 @@
+﻿
+<div class="col-6 col-md-4 order-2 order-md-1 site-search-icon text-left">
+
+    @using (Html.BeginForm("KitapAra", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <input type="text" class="form-control border-0" placeholder="Ara" id="Ara" name="Ara" width="100%" />
+        <button class="btn btn-default" type="submit" value="Ara">
+
+            <span class="icon icon-search2"></span>
+        </button>}
+
+</div>
+

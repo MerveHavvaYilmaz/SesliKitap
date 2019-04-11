@@ -1,0 +1,114 @@
+﻿@*@model IEnumerable<SesliKitap.Models.Urun>
+
+    @{
+        ViewBag.Title = "KitapAra";
+    }
+
+    <h2>KitapAra</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Kategori.KategoriAdi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Users.UserRole)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UrunAdi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EklenmeTarihi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ozet)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Süre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Yazar)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Seslendiren)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Demo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SesDosyası)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Resim)
+            </th>
+            <th></th>
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Kategori.KategoriAdi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Users.UserRole)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UrunAdi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EklenmeTarihi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ozet)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Süre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Yazar)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Seslendiren)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Demo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SesDosyası)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Resim)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.UrunID }) |
+                @Html.ActionLink("Details", "Details", new { id=item.UrunID }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.UrunID })
+            </td>
+        </tr>
+    }
+
+    </table>*@
+
+
+<div class="food container_custom">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="section_title text-center"><h1>Aradığınız Kitap</h1></div>
+                <div class="kapsayici">
+                    @foreach (var item in Model)
+                    {
+                        <div class="eleman">
+                            <a href="@Url.Action("BilgileriGetir","Uruns",new { id=item.UrunID})">
+                                <img src="@Url.Content(item.Resim)" alt="Image" class="profil" width="258" height="380" />
+                            </a>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>    

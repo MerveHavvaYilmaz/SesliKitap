@@ -1,0 +1,12 @@
+﻿@model IEnumerable<SesliKitap.Models.Kategori>
+
+<ul class="dropdown">
+
+    @foreach (var item in Model)
+    {
+        <li>
+            <a href="@Url.Action("KategoriUrunleriGetir","Uruns",new { id=item.KategoriID})">
+            @Html.DisplayFor(modelItem => item.KategoriAdi)</a>
+        </li>
+    }
+</ul>

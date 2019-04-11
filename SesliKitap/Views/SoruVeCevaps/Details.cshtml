@@ -1,0 +1,50 @@
+﻿@model SesliKitap.Models.SoruVeCevap
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div id="page-wrapper">
+    <div id="page-inner">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Details</h2>
+
+                <div>
+                    <h4>SoruVeCevap</h4>
+                    <hr />
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Users.UserRole)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Users.UserRole)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Soru)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Soru)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Cevap)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Cevap)
+                        </dd>
+
+                    </dl>
+                </div>
+                </div>
+            </div>
+        </div></div>
+                <p>
+                    @Html.ActionLink("Edit", "Edit", new { id = Model.SoruCevapID }) |
+                    @Html.ActionLink("Back to List", "Index")
+                </p>

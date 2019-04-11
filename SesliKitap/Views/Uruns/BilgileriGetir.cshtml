@@ -1,0 +1,80 @@
+﻿@model SesliKitap.Models.BilgilerViewModel
+
+@{
+    ViewBag.Title = "BilgileriGetir";
+}
+
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+
+
+<div class="food container_custom">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+
+                <div class="sayfa">
+                    <div class="orta">
+                        <div class="orta-sol">                          
+                                <img src="../@Html.DisplayFor(model => model.Resim)" width="258" height="380">                                                 
+                        </div>
+                        <div class="orta-sag">
+                            <p3>
+                                Kitap Adı
+                            </p3>
+                            <br />
+                            <p2>
+                                @Html.DisplayFor(model => model.UrunAdi)
+                            </p2>
+                        </div>
+                        <div class="orta-sag">
+                            <p3>
+                                Yazarı
+                            </p3>
+                            <br />
+                            <p2>
+                                @Html.DisplayFor(model => model.Yazar)
+                            </p2>
+                        </div>
+                        <div class="orta-sag">
+                            <p3>
+                                Seslendiren
+                            </p3>
+                            <br />
+                            <p2>
+                                @Html.DisplayFor(model => model.Seslendiren)
+                            </p2>
+                        </div>
+                        <div class="orta-sag">
+                            <p3>
+                                Süre
+                            </p3>
+                            <br />
+                            <p2>
+                                @Html.DisplayFor(model => model.Süre)
+                            </p2>
+                        </div>
+                        <div class="orta-sag">
+                            <p3>
+                                Demo
+                            </p3>
+                            <br />
+                            <audio controls="controls">
+                                <source type="audio/mp3" src="../@Html.DisplayFor(model => model.Demo)" />
+                            </audio>
+                        </div>
+
+                        <div class="alt">
+                            <p3>
+                                Kitap Özeti
+                            </p3>
+                            <br />
+                            <p2>
+                                @Html.DisplayFor(model => model.Ozet)
+                            </p2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

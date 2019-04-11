@@ -1,0 +1,20 @@
+﻿<div class="food container_custom">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="section_title text-center"><h1>En Çok Dinlenenler</h1></div>
+                <div class="kapsayici">
+                    @foreach (var item in Model)
+                    {
+                        <div class="eleman">
+                            <a href="@Url.Action("BilgileriGetir","Uruns",new { id=item.UrunID})">
+                                <img src="@Url.Content(item.Resim)" alt="Image" class="profil" width="258" height="380" />
+                            </a>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

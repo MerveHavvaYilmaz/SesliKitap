@@ -1,0 +1,21 @@
+﻿@model IEnumerable<SesliKitap.Models.SoruVeCevap>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="acc-container">
+    @foreach (var item in Model)
+    {
+        <div class="acc-btn"><h1 class="selected">@Html.DisplayFor(modelItem => item.Soru)</h1></div>
+        <div class="acc-content">
+            <div class="acc-content-inner">
+                <p>@Html.DisplayFor(modelItem => item.Cevap)</p>
+            </div>
+        </div>
+    }
+</div>
+
+   
+  
+

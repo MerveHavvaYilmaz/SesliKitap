@@ -1,0 +1,105 @@
+﻿@model SesliKitap.Models.Urun
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div id="page-wrapper">
+    <div id="page-inner">
+        <div class="row">
+            <div class="col-lg-12">
+                <h4>Detay</h4>
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        Kategori Adı
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Kategori.KategoriAdi)
+                    </dd>
+
+                    <dt>
+                       Ürün Adı
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.UrunAdi)
+                    </dd>
+
+                    <dt>
+                       Eklenme Tarihi
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.EklenmeTarihi)
+                    </dd>
+
+                    <dt>
+                        Özet
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Ozet)
+                    </dd>
+
+                    <dt>
+                        Süre
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Süre)
+                    </dd>
+
+                    <dt>
+                        Yazar
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Yazar)
+                    </dd>
+
+                    <dt>
+                        Seslendiren
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Seslendiren)
+                    </dd>
+
+                    <dt>
+                        Demo
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Demo)
+                    </dd>
+
+                    <dt>
+                       Ses Dosyası
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.SesDosyası)
+                    </dd>
+
+                    <dt>
+                       Fotoğraf
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Resim)
+                    </dd>
+
+                </dl>
+                </div>
+            </div></div>
+    </div>
+
+                <p>
+                    @Html.ActionLink("Edit", "Edit", new { id = Model.UrunID }) |
+                    @Html.ActionLink("Back to List", "Index")
+                </p>

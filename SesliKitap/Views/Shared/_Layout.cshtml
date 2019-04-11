@@ -1,0 +1,210 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mukta:300,400,700">
+    <link href="~/Content/assets/fonts/icomoon/style.css" rel="stylesheet" />
+    <link href="~/Content/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/assets/css/magnific-popup.css" rel="stylesheet" />
+    <link href="~/Content/assets/css/jquery-ui.css" rel="stylesheet" />
+    <link href="~/Content/assets/css/owl.carousel.min.css" rel="stylesheet" />
+    <link href="~/Content/assets/css/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="~/Content/assets/css/aos.css" rel="stylesheet" />
+    <link href="~/Content/assets/css/style.css" rel="stylesheet" />
+    <script src="~/Content/assets/js/jquery-3.3.1.min.js"></script>
+    <script src="~/Content/assets/js/JavaScript.js"></script>
+</head>
+<body>
+    <div class="site-wrap">
+        <header class="site-navbar" role="banner">
+            <div class="site-navbar-top">
+                <div class="container">
+                    <div class="row align-items-center">
+                        @{ Html.RenderAction("KitapAraPartial", "Home");}
+                        <div class="col-12 mb-3 mb-md-0 col-md-4 order-1 order-md-2 text-center">
+                            <div class="site-logo">
+                                <a href="@Url.Action("Anasayfa","Uruns")" class="js-logo-clone">Seslenen Kitap</a>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4 order-3 order-md-3 text-right">
+                            <ul class="menu mt-2">
+                                @if (!this.User.Identity.IsAuthenticated)
+                                {
+                                    <li>
+                                        <a href="@Url.Action("Login", "Account")">Giriş Yap </a>
+                                    </li>
+
+                                }
+                                @if (this.User.Identity.IsAuthenticated)
+                                {
+                                    <li>
+                                        <a href="@Url.Action("LogOut", "Account")">Çıkış Yap</a>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="site-navigation text-right text-md-center" role="navigation">
+                <div class="container">
+                    <ul class="site-menu js-clone-nav d-none d-md-block">
+                        <li>
+                            <a href="@Url.Action("Anasayfa","Uruns")">Anasayfa</a>
+                        </li>
+                        <li class="has-children">
+                            <a href="@Url.Action("Anasayfa","Uruns")">Kategoriler</a>
+
+                            @{ Html.RenderAction("KategoriPartial", "Kategoris");}
+
+                        </li>
+                        <li><a href="@Url.Action("SoruVeCevaplar","SoruVeCevaps")">Soru ve Cevaplar</a></li>
+                        <li><a href="@Url.Action("EnCokDinlenenler","Uruns")">En Çok Dinlenenler</a></li>
+                        <li><a href="@Url.Action("SonEklenenler","Uruns")">Son Eklenenler</a></li>
+                        <li>
+                            <ul>
+                                @if (this.User.IsInRole("Admin"))
+                                {
+                                    <li><a href="@Url.Action("Index","Admin")">Yönetim Paneli</a></li>
+                                }
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        @RenderBody()
+        <hr />
+        <footer class="site-footer border-top">
+            <div class="container">
+                <div class="row havva">
+                    Seslenen Kitap bir “Sesli Kitap Dükkanı”dır. Seslenen Kitap, Türkiye’de ilk defa, güncel yazarların en son eserlerini, çok okunan yazarların başyapıtlarını yazarların sesinden dinleyebileceğiniz sesli bir mecradır. Seslenen Kitap, sesli kitap dükkanı olarak güncel yazarların son kitaplarını ve çok okunan, popüler yazarların başyapıtlarını sesli kitaplığında sunuyor. Seslenen Kitap, mobil cihazlar üzerinden kolaylıkla ulaşılan ücretsiz iOS, Android ve Windows Telefon uygulamaları ile kitap okuma alışkanlığını değiştiriyor. Seslenen Kitap uygulamasının dükkan sekmesinde Seslenen Kitap raflarında bulunan en çok satan kitapları görebilir ve bir tuşla satın alma ekranına yönlenebilirsiniz. Sesli kitap indiren dinleyicilerine online kitap kütüphanesi ve sesli kitap dinleme fırsatı sunan Seslenen Kitap, yeni kitaplar ile portfoyünü her gün büyütüyor. Seslenen Kitap’tan online kitap alan herkes, artık kitaplara daha hızlı ve kolay ulaşıyor.
+                    <div class="col-md-6 col-lg-3 mb-4 mb-lg-0 havva2" @*col-lg-6 mb-5 mb-lg-0*@>
+
+                        <table class="HowItWorks">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <img src="~/Content/assets/images/üyeol.jpg" width="200" height="200" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        Üye Ol
+                                    </th>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <h1>
+                            seslenenkitap.com veya Seslenen Kitap Mobil Uygulamalarından email adresini gir, şifreni oluştur ve kolayca üye ol
+                        </h1>
+                    </div>
+                    <div class="col-md-6 col-lg-3 mb-4 mb-lg-0 havva2" @*col-lg-6 mb-5 mb-lg-0*@>
+
+
+                        <table class="HowItWorks">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <img src="~/Content/assets/images/kitabınıseç.png" width="200" height="200" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        Kitabını Seç
+                                    </th>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                        <h1>
+                            Yazarının ya da bir profesyonelinin seslendirdiği zengin Seslenen Kitap portföyünden kitabını seç
+                        </h1>
+
+                    </div>
+
+                    <div class="col-md-6 col-lg-3 mb-4 mb-lg-0" @*col-lg-6 mb-5 mb-lg-0*@>
+
+
+                        <table class="HowItWorks">
+                            <tbody>
+                                <tr>
+
+                                    <td>
+                                        <img src="~/Content/assets/images/dinlee.jpg" width="200" height="200" />
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <th>
+                                        Dinlemeye Başla
+                                    </th>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                        <h1>
+                            Cihazına indirdiğin kitaplarını internet bağlantısına ihtiyaç duymadan dilediğin yerde dinlemeye başla
+                        </h1>
+
+                    </div>
+
+                    @*<div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+                            <h3 class="footer-heading mb-4">Promo</h3>
+                            <a href="#" class="block-6">
+                                <img src="images/hero_1.jpg" alt="Image placeholder" class="img-fluid rounded mb-4">
+                                <h3 class="font-weight-light  mb-0">Finding Your Perfect Shoes</h3>
+                                <p>Promo from  nuary 15 &mdash; 25, 2019</p>
+                            </a>
+                        </div>*@
+                    @*<div class="col-md-6 col-lg-3">
+                            <div class="block-5 mb-5">
+                                <h3 class="footer-heading mb-4">Contact Info</h3>
+                                <ul class="list-unstyled">
+                                    <li class="address">203 Fake St. Mountain View, San Francisco, California, USA</li>
+                                    <li class="phone"><a href="tel://23923929210">+2 392 3929 210</a></li>
+                                    <li class="email">emailaddress@domain.com</li>
+                                </ul>
+                            </div>
+                            <div class="block-7">
+                                <form action="#" method="post">
+                                    <label for="email_subscribe" class="footer-heading">Subscribe</label>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control py-4" id="email_subscribe" placeholder="Email">
+                                        <input type="submit" class="btn btn-sm btn-primary" value="Send">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>*@
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <script type="text/javascript">
+    $(document).ready(function () {
+            function Contains(text_one, text_two) {
+                if (text_one.indexOf(text_two) != -1)
+                    return true;
+            }
+            $('#ara').keyup(function () {
+                var searchText = $('#ara').val().toLowerCase();
+                $('.Search').each(function () {
+                    if (!Contains($(this).text().toLowerCase(), searchText)) {
+                        $(this).hide();
+                    }
+                    else {
+                        $(this).show();
+                    }
+                })
+            });
+        });</script>
+
+
+
+
+</body>
+</html>
